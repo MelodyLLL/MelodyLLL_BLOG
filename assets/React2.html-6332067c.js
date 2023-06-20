@@ -1,0 +1,1 @@
+import{_ as t,o as a,c,g as e,h as o}from"./app-2fedab17.js";const r={},s=e("h1",{id:"占位",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#占位","aria-hidden":"true"},"#"),o(" 占位")],-1),n=[s];function _(d,h){return a(),c("div",null,n)}const l=t(r,[["render",_],["__file","React2.html.vue"]]);export{l as default};
