@@ -1,0 +1,1 @@
+import{_ as t,o as n,c as a,g as e,h as c}from"./app-abb8a49b.js";const i={},o=e("h1",{id:"自研i18n国际化工具",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#自研i18n国际化工具","aria-hidden":"true"},"#"),c(" 自研i18n国际化工具")],-1),r=[o];function s(_,d){return n(),a("div",null,r)}const h=t(i,[["render",s],["__file","i18n-util.html.vue"]]);export{h as default};

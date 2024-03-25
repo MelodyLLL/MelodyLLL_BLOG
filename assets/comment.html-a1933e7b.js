@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-5075bb53","path":"/comment.html","title":"留言板子","lang":"zh-CN","frontmatter":{"lastUpdated":false,"contributors":false,"anchor":false},"headers":[],"git":{"updatedTime":1702106747000,"contributors":[{"name":"MelodyLLL","email":"d_o_double_g@163.com","commits":5}]},"filePathRelative":"comment.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-06fa05c8","path":"/note/engineering/i18n-util.html","title":"自研i18n国际化工具","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"note/engineering/i18n-util.md"}');export{e as data};

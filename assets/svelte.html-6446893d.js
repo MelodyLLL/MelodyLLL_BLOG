@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as a,g as e,h as c}from"./app-abb8a49b.js";const o={},l=e("h1",{id:"svelte",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#svelte","aria-hidden":"true"},"#"),c(" svelte")],-1),n=e("p",null,"svelte真牛逼",-1),r=[l,n];function _(d,h){return s(),a("div",null,r)}const f=t(o,[["render",_],["__file","svelte.html.vue"]]);export{f as default};
