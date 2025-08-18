@@ -1,0 +1,38 @@
+@import 'https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css';
+
+@font-face {
+	font-family: 'Indie Flower';
+	src: url('/fonts/IndieFlower.woff2') format('woff2'); /* Super Modern Browsers */
+}
+
+:root {
+	--font-family: 'LXGW WenKai Screen', sans-serif;
+	--font-family-code: 'LXGW WenKai Screen';
+
+	--search-input-width: 9.5rem !important;
+	--search-result-width: 20rem;
+	--bg-gradient: 255, 255, 255, 0.1;
+}
+
+html.dark {
+	--font-family: 'LXGW WenKai Screen', sans-serif;
+	--font-family-code: 'LXGW WenKai Screen';
+
+	--c-brand: #eca869;
+	--c-brand-light: #ffdca9;
+
+	--bg-gradient: 20, 20, 20, 0.7;
+	.navbar {
+		transition: all 0.3s;
+		background-color: rgba(var(--bg-gradient));
+	}
+
+	.sidebar {
+		transition: all 0.3s;
+		background-color: rgba(var(--bg-gradient));
+	}
+}
+
+img {
+	transition: opacity 0.5s ease-in-out;
+}

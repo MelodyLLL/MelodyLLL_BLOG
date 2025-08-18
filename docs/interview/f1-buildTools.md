@@ -1,0 +1,125 @@
+# 前端基建和构建工具
+
+## 说说怎样控制三方依赖版本
+
+控制三方依赖版本可以通过以下几种方式：
+
+1. **使用 `package.json` 文件**：
+  在 `package.json` 文件中指定依赖的版本号，可以使用精确版本号（如 `1.2.3`）、范围版本号（如 `^1.2.3` 或 `~1.2.3`）等。
+
+2. **使用 `npm shrinkwrap` 或 `yarn.lock` 文件**：
+  这些文件会锁定当前安装的依赖版本，确保在不同环境中安装的依赖版本一致。
+
+3. **使用 `npm ci` 命令**：
+  在 CI/CD 环境中使用 `npm ci` 命令安装依赖，它会根据 `package-lock.json` 文件安装依赖，确保版本一致。
+
+4. **手动更新依赖**：
+  定期检查并手动更新依赖版本，确保使用的依赖是最新的稳定版本。
+
+5. **使用工具**：
+  使用 `npm-check-updates` 等工具自动检查和更新依赖版本。
+
+通过以上方法，可以有效地控制三方依赖的版本，确保项目的稳定性和一致性。
+
+## AMD 和 CMD？
+
+这两者都是 JavaScript 的模块化规范，主要用于在浏览器环境下实现模块的定义和加载。它们的主要区别如下：
+
+- **AMD（Asynchronous Module Definition）**  
+  代表实现是 [RequireJS](https://requirejs.org/)。AMD 推崇依赖前置、提前执行，模块在定义时就声明其依赖，并在加载完成后立即执行。语法示例：
+
+  ```js
+  define(['dep1', 'dep2'], function(dep1, dep2) {
+    // 模块代码
+    return {};
+  });
+  ```
+
+- **CMD（Common Module Definition）**  
+  代表实现是 [SeaJS](https://seajs.github.io/seajs/docs/)。CMD 推崇依赖就近、延迟执行，只有在用到某个依赖时才去 require 它。语法示例：
+
+  ```js
+  define(function(require, exports, module) {
+    var dep1 = require('dep1');
+    // 模块代码
+    module.exports = {};
+  });
+  ```
+
+**主要区别：**
+- AMD 是提前加载依赖，适合异步加载，依赖在回调参数中提前传入。
+- CMD 是按需加载依赖，只有用到时才 require，依赖可以写在代码的任意位置。
+- 两者都解决了浏览器端模块化的问题，但实现方式和使用习惯略有不同。
+
+目前，随着 ES6 Module 的普及，AMD 和 CMD 的使用场景逐渐减少，但了解它们有助于理解前端模块化的发展历程。
+
+## webpack 构建流程？说完整一些。
+
+webpack 构建流程：
+
+初始化： 读取配置文件，初始化参数，加载插件。
+
+编译： 用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译。
+
+加载模块： 从入口文件开始，递归地构建整个依赖关系图，每个文件都会被转换成抽象语法树（AST）。
+
+寻找 loader： 在加载模块的过程中，遇到对应的文件类型时，webpack 会调用配置好的 loader 来对文件进行转换。
+
+构建模块： 递归地分析模块的依赖关系，根据依赖关系组装成一个个模块。
+
+生成代码： 根据组装好的模块，生成最终的代码块（chunk），一个 chunk 由多个模块组成。
+
+输出文件： 将最终的代码块写入到文件系统。
+
+## webpack 的热更新怎么做到的？
+
+webpack 的热更新：
+
+Webpack 的热更新（Hot Module Replacement，HMR）是一种在应用运行过程中替换、添加或删除模块的能力。实现步骤如下：
+
+在应用代码中添加 HMR 代码： 通过 webpack 提供的 API，在应用代码中嵌入对模块的监听和更新处理逻辑。
+
+开启 webpack 的 HMR 功能： 在 webpack 配置文件中配置 hot: true，告诉 webpack 启用 HMR。
+
+服务器支持： 在开发服务器上启用 HMR 支持，这可以通过 webpack-dev-server 来实现。
+
+客户端支持： 在浏览器中通过 WebSocket 等技术与服务器建立连接，当模块发生变化时，服务器通过连接通知客户端更新。
+
+## webpack 中自定义 loader
+
+自定义 loader 是通过编写 Node.js 模块来实现的，这个模块需要导出一个函数。这个函数会在文件转换过程中被调用，并且接收文件内容作为参数。自定义 loader 的主要工作是将输入的文件内容进行转换，然后返回新的内容。
+
+在 webpack 配置中，通过 module.rules 配置项来指定 loader
+
+## babel 是什么？
+
+> [Babel 是什么？ · Babel 中文文档 | Babel 中文网](https://www.babeljs.cn/docs/)
+
+## 写过的 webpack 插件、loader？
+
+类似 eslint 插件，雪碧图 loader, 监控 loader
+
+## rollup 常见配置、插件
+
+Rollup 是一个 JavaScript 模块打包器，它专注于将小块代码编译成更大、更复杂的代码块。下面是一些常见的 Rollup 配置和插件：
+
+### 常见配置
+
+- `input`：指定入口文件的路径。
+- `output`：指定输出文件的配置，包括文件路径、格式等。
+- `plugins`：配置使用的插件，例如处理 CSS、压缩代码等。
+
+### 常见插件
+
+- `rollup-plugin-babel`：用于将 ES6+ 代码转换为兼容的 JavaScript 代码。
+- `rollup-plugin-commonjs`：将 CommonJS 模块转换为 ES6 模块。
+- `rollup-plugin-node-resolve`：解析第三方模块的路径。
+- `rollup-plugin-terser`：压缩 JavaScript 代码。
+- `rollup-plugin-postcss`：处理 CSS 文件。
+- `rollup-plugin-sass`：处理 Sass 文件。
+- `rollup-plugin-json`：处理 JSON 文件。
+
+这些是一些常见的 Rollup 配置和插件，👇可以看看webpack的配置文档。
+
+> [配置 | webpack 中文文档](https://www.webpackjs.com/configuration/)
+

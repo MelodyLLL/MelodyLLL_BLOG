@@ -1,0 +1,31 @@
+{
+	"name": "melody-blog",
+	"version": "1.0.0",
+	"description": "a blog",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "vuepress dev docs",
+		"docs:build": "vuepress build docs",
+		"build": "vuepress build docs -d temp && cp CNAME temp/",
+		"dep": "bash deploy.sh"
+	},
+	"keywords": [
+		"blog"
+	],
+	"author": "MelodyLLL",
+	"license": "ISC",
+	"devDependencies": {
+		"@vuepress/client": "2.0.0-beta.63",
+		"@vuepress/plugin-search": "^2.0.0-beta.63",
+		"@vuepress/shared": "2.0.0-beta.63",
+		"@vuepress/theme-default": "2.0.0-beta.63",
+		"@vuepress/utils": "2.0.0-beta.63",
+		"vue": "^3.3.4",
+		"vuepress": "2.0.0-beta.63",
+		"vuepress-plugin-comment2": "^2.0.0-beta.224"
+	},
+	"volta": {
+		"node": "18.20.0"
+	}
+}
