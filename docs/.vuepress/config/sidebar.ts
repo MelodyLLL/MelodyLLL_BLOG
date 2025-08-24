@@ -44,7 +44,7 @@ const sidebar: SidebarConfig = {
 		{
 			text: '',
 			children: fileNames
-				.filter((item) => item.endsWith('.md') && !item.includes('/_'))
+				.filter((item) => item.endsWith('.md') && !item.includes('_'))
 				.map((item) => {
 					return '/interview/' + path.basename(item);
 				}),

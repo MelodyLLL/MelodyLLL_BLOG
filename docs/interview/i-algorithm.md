@@ -4,6 +4,7 @@
 # 算法和笔试题
 
 ## react 实现类似 Vue Reactive 函数的响应式效果
+TODO 待完善
 
 ## 手写继承
 
@@ -192,7 +193,8 @@ const duplicates = findDuplicates(arr);
 console.log(duplicates);
 ```
 
-## 手写 setTimeOut
+## 手写 setTimeOut 
+TODO 待完善
 
 ```javascript
 // setTimeout的实现
