@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2c35a314","path":"/note/engineering/Engineering6.html","title":"全局定时器","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1755542851000,"contributors":[{"name":"MelodyLLL","email":"d_o_double_g@163.com","commits":1}]},"filePathRelative":"note/engineering/Engineering6.md"}');export{e as data};

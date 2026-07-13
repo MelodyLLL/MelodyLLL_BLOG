@@ -1,0 +1,1 @@
+import{_ as t,c as a,e as o,f as e,g as c}from"./app-02424545.js";const s={},n=e("h1",{id:"关于",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#关于","aria-hidden":"true"},"#"),c(" 关于")],-1),r=e("p",null,"记录一些面试题，力求真实，精准，简练。",-1),_=[n,r];function d(i,l){return a(),o("div",null,_)}const f=t(s,[["render",d],["__file","a-about.html.vue"]]);export{f as default};

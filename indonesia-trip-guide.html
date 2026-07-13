@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17252b">
+  <title>给美琳的印尼旅行手册｜雅加达 & 布罗莫</title>
+  <style>
+    :root {
+      --ink: #203238;
+      --muted: #6d7c7d;
+      --paper: #fbf8f1;
+      --card: rgba(255,255,255,.78);
+      --line: rgba(32,50,56,.12);
+      --teal: #1c7270;
+      --teal-dark: #164e53;
+      --orange: #e66f3e;
+      --yellow: #f6c85f;
+      --danger: #a84435;
+      --shadow: 0 18px 48px rgba(34,55,60,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(246,200,95,.20), transparent 32rem),
+        radial-gradient(circle at 100% 15%, rgba(28,114,112,.12), transparent 28rem),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .hero {
+      min-height: 590px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(15,42,48,.98), rgba(28,114,112,.90) 52%, rgba(230,111,62,.82)),
+        #164e53;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      width: 520px; height: 520px;
+      right: -170px; top: -190px;
+    }
+    .hero::after { width: 720px; height: 720px; right: -300px; top: -300px; border-color: rgba(255,255,255,.08); }
+    .hero-content { position: relative; z-index: 1; padding: 72px 0 88px; }
+    .eyebrow { letter-spacing: .15em; text-transform: uppercase; font-size: .78rem; opacity: .78; }
+    h1 { font-size: clamp(2.7rem, 8vw, 6.5rem); line-height: .98; margin: 18px 0 22px; letter-spacing: -.06em; max-width: 790px; }
+    .hero-sub { font-size: clamp(1.02rem, 2vw, 1.35rem); max-width: 650px; color: rgba(255,255,255,.85); }
+    .date-chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid rgba(255,255,255,.30); border-radius: 999px; background: rgba(255,255,255,.10); font-weight: 700; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; padding: 11px 17px; cursor: pointer; font: inherit; font-weight: 700; text-decoration: none; }
+    .btn-light { color: var(--teal-dark); background: #fff; }
+    .btn-ghost { color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.26); }
+    .mountain { position: absolute; bottom: -4px; left: 0; width: 100%; height: 145px; background: #fbf8f1; clip-path: polygon(0 100%, 0 76%, 12% 54%, 20% 74%, 31% 39%, 45% 76%, 56% 27%, 68% 75%, 81% 48%, 100% 72%, 100% 100%); opacity: .95; }
+    main { padding: 54px 0 88px; }
+    .section { margin: 0 0 68px; scroll-margin-top: 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 22px; }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); line-height: 1.1; letter-spacing: -.04em; margin: 0; }
+    h3 { line-height: 1.25; margin: 0 0 8px; }
+    .kicker { color: var(--orange); font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+    .lead { color: var(--muted); max-width: 730px; margin: 9px 0 0; }
+    .grid { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card { padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: var(--card); box-shadow: 0 8px 30px rgba(34,55,60,.04); backdrop-filter: blur(8px); }
+    .card p:last-child { margin-bottom: 0; }
+    .feature-visual { margin: 0 0 20px; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: #eee5d6; box-shadow: var(--shadow); }
+    .feature-visual img { display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+    .feature-visual figcaption { padding: 10px 14px; color: var(--muted); font-size: .82rem; background: rgba(255,255,255,.84); }
+    .arrival-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 18px; }
+    .arrival-step { position: relative; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.65); }
+    .arrival-step b { display: block; color: var(--teal-dark); font-size: .82rem; }
+    .arrival-step span { display: block; margin-top: 5px; color: var(--muted); font-size: .83rem; line-height: 1.55; }
+    .icon { font-size: 1.8rem; display: block; margin-bottom: 12px; }
+    .stat { font-size: 1.55rem; font-weight: 850; line-height: 1.15; margin-bottom: 5px; }
+    .small { font-size: .88rem; color: var(--muted); }
+    .notice { border-radius: 26px; padding: 24px; margin-bottom: 22px; border: 1px solid rgba(168,68,53,.22); background: linear-gradient(135deg, rgba(255,241,226,.93), rgba(255,248,239,.84)); }
+    .notice strong { color: var(--danger); }
+    .notice-title { display: flex; align-items: center; gap: 10px; font-size: 1.18rem; font-weight: 850; margin-bottom: 7px; }
+    .notice ul, .card ul { margin: 10px 0 0; padding-left: 1.2em; }
+    .timeline { position: relative; margin-top: 10px; }
+    .timeline::before { content: ""; position: absolute; left: 17px; top: 18px; bottom: 18px; width: 2px; background: linear-gradient(var(--orange), var(--teal)); opacity: .32; }
+    .day { display: grid; grid-template-columns: 36px 1fr; gap: 17px; position: relative; margin-bottom: 14px; }
+    .dot { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--teal); font-size: .78rem; font-weight: 850; z-index: 1; }
+    .day-card { padding: 17px 20px; border-radius: 19px; border: 1px solid var(--line); background: rgba(255,255,255,.69); }
+    .day-date { color: var(--orange); font-weight: 850; font-size: .85rem; }
+    .day-card p { margin: 3px 0 0; }
+    .tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 999px; margin-left: 5px; font-size: .76rem; font-weight: 800; color: var(--teal-dark); background: rgba(28,114,112,.12); }
+    .tag.warn { color: var(--danger); background: rgba(168,68,53,.12); }
+    .checklist { display: grid; gap: 10px; }
+    label.check { display: flex; gap: 11px; align-items: flex-start; padding: 12px 13px; border-radius: 14px; background: rgba(255,255,255,.62); cursor: pointer; }
+    label.check input { margin-top: 6px; accent-color: var(--teal); }
+    label.check:has(input:checked) span { color: var(--muted); text-decoration: line-through; }
+    details { border-top: 1px solid var(--line); padding: 14px 0; }
+    details:first-child { border-top: 0; }
+    summary { cursor: pointer; font-weight: 800; }
+    .phrase { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 13px 0; border-bottom: 1px dashed var(--line); }
+    .phrase:last-child { border-bottom: 0; }
+    .phrase b { display: block; color: var(--teal-dark); }
+    .copy { border: 1px solid var(--line); background: #fff; color: var(--teal); border-radius: 999px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: .78rem; }
+    .number { display: flex; justify-content: space-between; gap: 14px; padding: 13px 0; border-bottom: 1px dashed var(--line); }
+    .number:last-child { border-bottom: 0; }
+    .number strong { color: var(--teal-dark); white-space: nowrap; }
+    table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    th, td { text-align: left; vertical-align: top; padding: 13px 11px; border-bottom: 1px solid var(--line); }
+    th { color: var(--teal-dark); font-size: .82rem; letter-spacing: .04em; }
+    .source-list { display: grid; gap: 9px; }
+    .source-list a { display: block; padding: 11px 14px; background: rgba(255,255,255,.65); border-radius: 13px; }
+    footer { padding: 30px 0 50px; color: var(--muted); font-size: .84rem; border-top: 1px solid var(--line); }
+    .footer-mark { color: var(--teal-dark); font-weight: 850; }
+    @media (max-width: 820px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .arrival-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 22px, 1120px); }
+      .hero { min-height: 620px; }
+      .hero-content { padding: 56px 0 90px; }
+      .hero-actions .btn { width: 100%; }
+      .grid-4, .grid-2 { grid-template-columns: 1fr; }
+      .arrival-steps { grid-template-columns: 1fr; }
+      .card, .notice { border-radius: 19px; padding: 18px; }
+      .feature-visual { border-radius: 19px; }
+      th, td { padding: 10px 6px; }
+      .mountain { height: 100px; }
+    }
+    @media print {
+      .hero { min-height: auto; color: #000; background: #fff; border-bottom: 1px solid #ddd; }
+      .hero::before, .hero::after, .mountain, .hero-actions { display: none; }
+      .hero-content { padding: 28px 0; }
+      .hero-sub, .eyebrow { color: #555; }
+      .section { margin-bottom: 30px; }
+      .card, .day-card, .notice { box-shadow: none; background: #fff; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-content">
+      <div class="eyebrow">A gentle first overseas trip · Indonesia 2026</div>
+      <div style="margin-top:18px"><span class="date-chip">✈️ 2026.07.15 — 2026.07.29</span></div>
+      <h1>给美琳的<br>印尼旅行手册</h1>
+      <p class="hero-sub">雅加达的城市气息、布罗莫的火山日出，以及第一次出国也能安心走完的实用指南。</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#important">先看最重要的事</a>
+        <button class="btn btn-ghost" onclick="window.print()">打印 / 保存 PDF</button>
+      </div>
+    </div>
+    <div class="mountain"></div>
+  </header>
+
+  <main class="wrap">
+    <section id="important" class="section">
+      <div class="section-head"><div><div class="kicker">Before everything</div><h2>出发前先记住这四件事</h2></div></div>
+      <div class="notice">
+        <div class="notice-title">🧡 这趟旅行，平安和舒服排在第一位</div>
+        <div>把护照、签证、酒店、返程机票和紧急联系人都存成离线截图；从机场到酒店优先用 Grab、Bluebird 或酒店安排的接送。布罗莫是<strong>可选行程</strong>：若当天开放、天气和同行安排都合适再去；一个人不舒服或不想折腾，留在雅加达慢慢逛也完全是好选择。</div>
+        <ul>
+          <li>出发前和当天早晨都检查天气、航班和官方公园公告。</li>
+          <li>夜间或偏远路段不独自行动；司机、车牌和集合定位提前发给家人。</li>
+          <li>遇到不舒服、路线临时变化或安全感不够时，直接取消或返回酒店。</li>
+          <li>不为拍照跨越警戒线，也不跟陌生人临时改行程。</li>
+        </ul>
+      </div>
+      <div class="grid grid-4">
+        <div class="card"><span class="icon">🛂</span><div class="stat">30天</div><div class="small">B1落地签停留期</div></div>
+        <div class="card"><span class="icon">💳</span><div class="stat">Rp500,000</div><div class="small">每人落地签费用</div></div>
+        <div class="card"><span class="icon">🚕</span><div class="stat">Grab / MRT</div><div class="small">雅加达优先出行方式</div></div>
+        <div class="card"><span class="icon">📞</span><div class="stat">110 / 119</div><div class="small">报警 / 急救</div></div>
+      </div>
+    </section>
+
+    <section id="route" class="section">
+      <div class="section-head"><div><div class="kicker">Your route</div><h2>15天慢游路线</h2><p class="lead">以下按 7 月 29 日从雅加达 CGK 回国安排。如果返程机场是泗水 SUB，需要重新调整最后几天。</p></div></div>
+      <div class="timeline">
+        <div class="day"><div class="dot">01</div><div class="day-card"><div class="day-date">7月15日 · 周三</div><h3>抵达雅加达，先休息</h3><p>完成入境、取行李、购买网络或启用 eSIM，使用 Grab 前往酒店。第一晚不安排景点。</p></div></div>
+        <div class="day"><div class="dot">02</div><div class="day-card"><div class="day-date">7月16日</div><h3>雅加达市中心</h3><p>Thamrin、Monas 独立广场、Istiqlal Mosque 清真寺、雅加达大教堂。宗教场所穿着得体。</p></div></div>
+        <div class="day"><div class="dot">03</div><div class="day-card"><div class="day-date">7月17日</div><h3>老城与唐人街</h3><p>Kota Tua、Fatahillah Square、Glodok。雅加达交通拥堵，景点不要排得过密。</p></div></div>
+        <div class="day"><div class="dot">04</div><div class="day-card"><div class="day-date">7月18日</div><h3>雅加达美食日</h3><p>睡到自然醒，午餐吃 Betawi 菜，傍晚去 Pecenongan 或 Blok S 逛吃。当天只安排一个片区，留足时间回酒店休息。</p></div></div>
+        <div class="day"><div class="dot">05</div><div class="day-card"><div class="day-date">7月19日</div><h3>城市散步 / 商场与咖啡</h3><p>可选 Menteng、Sudirman、Grand Indonesia 或 Plaza Indonesia。雅加达适合慢一点：逛一家商场、吃一顿喜欢的饭就很好。</p></div></div>
+        <div class="day"><div class="dot">06</div><div class="day-card"><div class="day-date">7月20日</div><h3>布罗莫（可选，建议结伴）<span class="tag warn">不适合独自赶路</span></h3><p>只有在同行、天气、官方开放与正规接送都确认后，才从雅加达飞泗水再前往 Cemoro Lawang；否则继续留在雅加达。</p></div></div>
+        <div class="day"><div class="dot">07</div><div class="day-card"><div class="day-date">7月21日</div><h3>布罗莫日出 / 返回泗水（可选）</h3><p>仅在官方允许区域、由正规 4WD Jeep 和司机带领时体验。觉得冷、累或天气不好就放弃，不走非官方路线。</p></div></div>
+        <div class="day"><div class="dot">08</div><div class="day-card"><div class="day-date">7月22日</div><h3>回雅加达，什么都不赶</h3><p>若去了布罗莫，今天安排返程和恢复体力；若没去，可以继续在雅加达吃饭、购物或休息。</p></div></div>
+        <div class="day"><div class="dot">09–14</div><div class="day-card"><div class="day-date">7月23—28日</div><h3>雅加达慢游与整理行李</h3><p>可以分散安排购物、商场、咖啡店和已确认营业的景点。14天只去两地会比较宽松，不需要每天赶行程。</p></div></div>
+        <div class="day"><div class="dot">15</div><div class="day-card"><div class="day-date">7月29日 · 周三</div><h3>回国</h3><p>国际航班至少提前 3 小时到机场；从市区出发建议预留 5—6 小时，避免雅加达堵车造成误机。</p></div></div>
+      </div>
+    </section>
+
+    <section id="entry" class="section">
+      <div class="section-head"><div><div class="kicker">Arrival</div><h2>落地到出机场，按这个顺序走</h2><p class="lead">先别急着换钱或找车。跟随机场的 <b>Immigration / Passport Control（入境）</b>、<b>Baggage Claim（行李提取）</b>、<b>Customs（海关）</b>、<b>Exit（出口）</b> 图标走；看不懂就把这几个英文词给工作人员看。</p></div></div>
+      <figure class="feature-visual">
+        <img src="/images/indonesia/arrival-wayfinding.png" alt="印尼机场抵达厅的行李、入境与出口方向图标示意">
+        <figcaption>看图认方向：优先跟随“护照 / 行李箱 / 出口”图标；图片为行前动线示意，不代表机场现场的具体指示牌。</figcaption>
+      </figure>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>出发前完成</h3>
+          <div class="checklist">
+            <label class="check"><input type="checkbox" data-key="visa"><span>办理电子落地签 e-VoA，姓名和护照号码必须完全一致</span></label>
+            <label class="check"><input type="checkbox" data-key="arrival"><span>填写 All Indonesia 入境申报，保存二维码</span></label>
+            <label class="check"><input type="checkbox" data-key="insurance"><span>购买包含医疗、火山关闭和航班延误的旅行保险</span></label>
+            <label class="check"><input type="checkbox" data-key="apps"><span>安装 Grab、WhatsApp、Google Maps、Google Translate</span></label>
+            <label class="check"><input type="checkbox" data-key="docs"><span>把护照、签证、机票、酒店和司机信息保存为截图</span></label>
+          </div>
+        </div>
+        <div class="card">
+          <h3>中国护照 B1 VoA / e-VoA</h3>
+          <table>
+            <tr><th>停留时间</th><td>30天，足够覆盖本次行程</td></tr>
+            <tr><th>费用</th><td>Rp500,000 / 人</td></tr>
+            <tr><th>护照</th><td>入境时至少还有6个月有效期</td></tr>
+            <tr><th>材料</th><td>返程或联程机票、酒店订单、签证文件</td></tr>
+            <tr><th>官方入口</th><td><a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer">evisa.imigrasi.go.id</a></td></tr>
+          </table>
+          <p class="small">e-VoA 是出发前在线办理的电子落地签；不确定资格或费用时，以官方签证页面当天显示为准。All Indonesia 是免费的入境、海关、健康和检疫综合申报，不要向陌生“代办”付款。</p>
+        </div>
+      </div>
+      <div class="arrival-steps">
+        <div class="arrival-step"><b>01 · 下机</b><span>打开手机网络或连机场 Wi‑Fi，准备护照、e-VoA PDF / 签证截图与 All Indonesia 二维码。</span></div>
+        <div class="arrival-step"><b>02 · 入境 / 签证</b><span>先看是否已有 e-VoA；没有则跟随 <b>Visa on Arrival</b> 指示，在官方柜台缴费、领取签证，再排 <b>Immigration</b>。</span></div>
+        <div class="arrival-step"><b>03 · 过边检</b><span>把护照和签证交给工作人员；如被问行程，出示返程机票、酒店订单即可。不要替陌生人带任何物品。</span></div>
+        <div class="arrival-step"><b>04 · 取行李 / 海关</b><span>按航班号找 <b>Baggage Claim</b> 转盘，随后出示 All Indonesia 二维码。申报或 IMEI 问题直接问穿制服的海关人员。</span></div>
+        <div class="arrival-step"><b>05 · 走到正规出口</b><span>出了海关再启用 eSIM、取现或换少量现金。只在应用内叫 Grab，或去 Bluebird 正规柜台；不跟机场外拉客的人走。</span></div>
+      </div>
+      <details style="margin-top:18px"><summary>落地签柜台最容易卡住的地方</summary><p><b>已办 e-VoA：</b>通常直接前往入境检查；是否可使用自助通关以机场现场设备和资格为准。<br><b>未办 e-VoA：</b>先找 “Visa on Arrival” 柜台，确认金额与付款方式，再去 Immigration，不要排错队。<br><b>All Indonesia：</b>国际抵达旅客须提交入境申报，完成后保存二维码；最好在抵达前填好，没网时可截图出示。<br><b>IMEI：</b>仅当从境外新购手机、平板等并计划长期使用印尼 SIM 卡时，才向海关咨询登记；普通随身使用的旧手机不必临时慌张。</p></details>
+      <a href="https://id.china-embassy.gov.cn/lsfw/zytz_0/202406/t20240603_11375830.htm" target="_blank" rel="noreferrer">🇨🇳 中国驻印尼使馆-如何申请印尼电子落地签？如何自助入境？</a>
+    </section>
+
+    <section id="jakarta" class="section">
+      <div class="section-head"><div><div class="kicker">Jakarta</div><h2>雅加达：少跑一点，体验更好</h2><p class="lead">雅加达景点之间距离并不远，但堵车会让行程变得很慢。优先使用 Grab、Bluebird、MRT，避免租摩托车。Kota Tua 的博物馆、广场与街区适合安排在同一个半天慢慢走。</p></div></div>
+      <div class="grid grid-3">
+        <div class="card"><span class="icon">🏙️</span><h3>市中心</h3><p>Thamrin、Sudirman、Monas、Istiqlal Mosque、雅加达大教堂。适合第一次到雅加达。</p></div>
+        <div class="card"><span class="icon">🏛️</span><h3>老城</h3><p>Kota Tua、Fatahillah Square、博物馆和街区建筑。建议白天前往，注意手机和钱包。</p></div>
+        <div class="card"><span class="icon">🛍️</span><h3>休闲购物</h3><p>Grand Indonesia、Plaza Indonesia 等商场适合调整节奏、吃饭和购买伴手礼。</p></div>
+      </div>
+    </section>
+
+    <section id="food" class="section">
+      <div class="section-head"><div><div class="kicker">Eat Jakarta</div><h2>雅加达要多吃几顿</h2><p class="lead">从早餐到夜宵，都可以把“想吃什么”当作当天目的地。点餐时先说不辣，能吃辣再慢慢加 sambal。店铺营业时间和位置变化快，出发前用地图核对。</p></div></div>
+      <figure class="feature-visual">
+        <img src="/images/indonesia/jakarta-foods.png" alt="雅加达椰浆饭、沙爹、Soto Betawi 与 Kerak Telor 美食拼盘">
+        <figcaption>一餐尝四样：椰浆饭、沙爹、Soto Betawi 和 Kerak Telor。图片为原创菜品示意，实际摆盘和口味会因餐厅而不同。</figcaption>
+      </figure>
+      <div class="grid grid-3">
+        <div class="card"><span class="icon">🍚</span><h3>Nasi Uduk</h3><p>椰浆香饭配炸鸡、豆腐、天贝、鸡蛋和 sambal；是很有代表性的 Betawi 早餐或简餐。第一次可以点 <b>tidak pedas</b>（不要辣）。</p></div>
+        <div class="card"><span class="icon">🥚</span><h3>Kerak Telor</h3><p>糯米、鸡蛋或鸭蛋、椰丝和虾米做成的 Betawi 小吃。Kota Tua 一带常能见到，不要急着边走边吃，找干净摊位慢慢尝。</p></div>
+        <div class="card"><span class="icon">🍜</span><h3>Soto Betawi</h3><p>椰奶或牛奶风味的牛肉汤，配米饭很满足。口味偏浓，第一次可和朋友分着吃，再决定要不要加辣椒酱。</p></div>
+        <div class="card"><span class="icon">🍗</span><h3>Nasi Goreng &amp; Satay</h3><p>炒饭和沙爹是最容易点的安全牌。告诉店家 <b>tanpa pedas</b>（不加辣），并确认肉类种类；不确定就直接给服务员看这页。</p></div>
+        <div class="card"><span class="icon">🍢</span><h3>夜间逛吃</h3><p>Pecenongan、Mangga Besar、Blok S 都适合把晚饭安排成小份多尝。一个人晚上尽量选人流多、可打车直达的店，吃完直接回酒店。</p></div>
+        <div class="card"><span class="icon">🍽️</span><h3>舒服地吃一顿</h3><p>想要稳定、坐得舒服，可以选择商场餐厅或较正式的印尼菜餐厅；Kembang Goela 是官方旅游指南收录的传统印尼菜选项之一，去前仍请查看地图营业状态。</p></div>
+      </div>
+    </section>
+
+    <section id="bromo" class="section">
+      <div class="section-head"><div><div class="kicker">Bromo · Optional</div><h2>布罗莫：想去再去，最好结伴</h2><p class="lead">它不是这趟旅行的必选项。凌晨、山路和天气变化都会增加负担；如果决定去，请只预留一晚两天，并选择可退改的正规接送。</p></div></div>
+      <div class="notice">
+        <div class="notice-title">🌋 出发前的四个确认</div>
+        <ul>
+          <li>官方公园是否开放，以及当天的天气、火山信息和航班状态。</li>
+          <li>同行伙伴、司机姓名、车牌、WhatsApp 与集合定位都已确认。</li>
+          <li>住宿和 4WD Jeep 能退改；不租摩托车、不走非官方路线。</li>
+          <li>带厚外套、防滑鞋、口罩、墨镜、密封水和晕车药；感觉不舒服就不去。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="language" class="section">
+      <div class="section-head"><div><div class="kicker">No English needed</div><h2>不会英语，也能完成沟通</h2><p class="lead">提前把酒店地址、司机信息和以下印尼语保存为截图。遇到问题时，直接把手机递给对方看。</p></div></div>
+      <div class="card">
+        <div class="phrase"><div><b>Saya tidak bisa berbahasa Inggris.</b>我不会英语。</div><button class="copy" data-copy="Saya tidak bisa berbahasa Inggris.">复制</button></div>
+        <div class="phrase"><div><b>Tolong antar saya ke alamat ini.</b>请送我到这个地址。</div><button class="copy" data-copy="Tolong antar saya ke alamat ini.">复制</button></div>
+        <div class="phrase"><div><b>Saya mau ke hotel ini.</b>我要去这家酒店。</div><button class="copy" data-copy="Saya mau ke hotel ini.">复制</button></div>
+        <div class="phrase"><div><b>Berapa harganya?</b>多少钱？</div><button class="copy" data-copy="Berapa harganya?">复制</button></div>
+        <div class="phrase"><div><b>Tidak pedas.</b>不要辣。</div><button class="copy" data-copy="Tidak pedas.">复制</button></div>
+        <div class="phrase"><div><b>Tanpa sambal, ya.</b>请不要辣椒酱。</div><button class="copy" data-copy="Tanpa sambal, ya.">复制</button></div>
+        <div class="phrase"><div><b>Boleh minta menu bahasa Inggris?</b>可以给我英文菜单吗？</div><button class="copy" data-copy="Boleh minta menu bahasa Inggris?">复制</button></div>
+        <div class="phrase"><div><b>Saya alergi [isi alergi].</b>我对［填过敏食物］过敏。</div><button class="copy" data-copy="Saya alergi [isi alergi].">复制</button></div>
+        <div class="phrase"><div><b>Bisa bayar pakai kartu atau QRIS?</b>可以刷卡或扫码付款吗？</div><button class="copy" data-copy="Bisa bayar pakai kartu atau QRIS?">复制</button></div>
+        <div class="phrase"><div><b>Di mana toilet?</b>洗手间在哪里？</div><button class="copy" data-copy="Di mana toilet?">复制</button></div>
+        <div class="phrase"><div><b>Tolong tunggu sebentar.</b>请稍等一下。</div><button class="copy" data-copy="Tolong tunggu sebentar.">复制</button></div>
+        <div class="phrase"><div><b>Saya tersesat. Bisa bantu saya?</b>我迷路了，可以帮帮我吗？</div><button class="copy" data-copy="Saya tersesat. Bisa bantu saya?">复制</button></div>
+        <div class="phrase"><div><b>Saya perlu ke rumah sakit.</b>我需要去医院。</div><button class="copy" data-copy="Saya perlu ke rumah sakit.">复制</button></div>
+        <div class="phrase"><div><b>Tolong panggil polisi.</b>请帮我报警。</div><button class="copy" data-copy="Tolong panggil polisi.">复制</button></div>
+      </div>
+    </section>
+
+    <section id="safety" class="section">
+      <div class="section-head"><div><div class="kicker">Stay safe</div><h2>安全和健康提醒</h2></div></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>人身和财产</h3>
+          <ul>
+            <li>手机不要拿在靠马路一侧，防飞车抢夺。</li>
+            <li>不坐机场外陌生人招揽的车，使用Grab或正规出租车。</li>
+            <li>不接受陌生人换汇、代办签证、带东西或转账请求。</li>
+            <li>女性尽量避免夜间独自外出，遇到游行不要围观。</li>
+            <li>不携带大麻、CBD、毒品或不明药品；常用药保留原包装。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>饮食和身体</h3>
+          <ul>
+            <li>只喝密封瓶装水，不喝自来水。</li>
+            <li>路边冰块、生食和过辣食物谨慎尝试。</li>
+            <li>准备驱蚊液，注意防范蚊虫叮咬。</li>
+            <li>布罗莫高寒、风大、沙尘多，量力而行。</li>
+            <li>乘车系安全带，乘摩托车必须戴头盔；但不建议租摩托车。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head"><div><div class="kicker">Emergency</div><h2>需要帮助时，先打这些电话</h2></div></div>
+      <div class="card">
+        <div class="number"><span>印尼报警</span><strong>110</strong></div>
+        <div class="number"><span>印尼急救</span><strong>119</strong></div>
+        <div class="number"><span>外交部全球领保</span><strong>+86-10-12308</strong></div>
+        <div class="number"><span>中国驻印尼使馆</span><strong>+62-21-5764135</strong></div>
+        <div class="number"><span>中国驻泗水总领馆</span><strong>+62-31-5678284</strong></div>
+      </div>
+    </section>
+
+    <section id="sources" class="section">
+      <div class="section-head"><div><div class="kicker">Official links</div><h2>出发前最后核对</h2><p class="lead">火山开放、天气和航班都是动态信息。网页内容不能替代出发当天的官方公告。</p></div></div>
+      <div class="source-list">
+        <a href="https://bromotenggersemeru.id/" target="_blank" rel="noreferrer">🌋 TNBTS 国家公园官方预约与规则</a>
+        <a href="https://magma.esdm.go.id/" target="_blank" rel="noreferrer">🌋 MAGMA Indonesia 火山与地质灾害监测</a>
+        <a href="https://www.bmkg.go.id/" target="_blank" rel="noreferrer">🌦️ BMKG 印尼气象局</a>
+        <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer">🛂 印尼官方电子签证</a>
+        <a href="https://allindonesia.imigrasi.go.id/" target="_blank" rel="noreferrer">🧾 All Indonesia 入境申报</a>
+        <a href="https://www.beacukai.go.id/ecd/undang-undang-cukai" target="_blank" rel="noreferrer">🛃 印尼海关：All Indonesia / Customs Declaration 与二维码说明</a>
+        <a href="https://www.indonesia.travel/id/id/travel-ideas/heritage/explore-jakarta-kota-tua-today-s-old-batavia" target="_blank" rel="noreferrer">🏛️ Indonesia Travel：Kota Tua 景点与参观提示</a>
+        <a href="https://www.indonesia.travel/gb/en/travel-ideas/gastronomy/kembang-goela-a-timeless-culinary-destination-for-heritage-driven-travelers" target="_blank" rel="noreferrer">🍽️ Indonesia Travel：Kembang Goela 传统印尼菜介绍</a>
+        <a href="https://id.china-embassy.gov.cn/lsfw/zytz_0/202604/t20260429_11902256.htm" target="_blank" rel="noreferrer">🇨🇳 中国驻印尼使馆安全提醒</a>
+      </div>
+      <details style="margin-top:18px"><summary>关于酒店</summary><p>本手册没有列出未经当前日期核验的具体酒店名称。预订时优先看近期评论、地图营业状态、24小时入住、热水、凌晨接送和火山关闭后的退改政策。布罗莫优先考虑 Cemoro Lawang 附近。</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span class="footer-mark">给美琳的印尼旅行手册</span> · 页面最后整理：2026年7月13日<br>愿你玩的开心，也有平平安安回家的每一天。要记住，我们以后还有很多地方要去！</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('input[data-key]').forEach(input => {
+      const key = 'indonesia-trip-' + input.dataset.key;
+      input.checked = localStorage.getItem(key) === '1';
+      input.addEventListener('change', () => localStorage.setItem(key, input.checked ? '1' : '0'));
+    });
+    document.querySelectorAll('[data-copy]').forEach(button => {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          const old = button.textContent;
+          button.textContent = '已复制';
+          setTimeout(() => button.textContent = old, 1200);
+        } catch (_) { button.textContent = '请长按复制'; }
+      });
+    });
+  </script>
+</body>
+</html>

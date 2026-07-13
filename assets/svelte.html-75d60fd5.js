@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-58c3542a","path":"/note/new/svelte.html","title":"svelte","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"轻运行时","slug":"轻运行时","link":"#轻运行时","children":[]}],"git":{"updatedTime":1755542851000,"contributors":[{"name":"MelodyLLL","email":"d_o_double_g@163.com","commits":1}]},"filePathRelative":"note/new/svelte.md"}');export{e as data};
