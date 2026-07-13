@@ -8,6 +8,7 @@
 		"dev": "vuepress dev docs",
 		"docs:build": "vuepress build docs",
 		"build": "vuepress build docs -d temp && cp CNAME temp/",
+		"build1": "vuepress build docs -d temp && shx cp CNAME temp/",
 		"dep": "bash deploy.sh"
 	},
 	"keywords": [
@@ -21,6 +22,7 @@
 		"@vuepress/shared": "2.0.0-beta.63",
 		"@vuepress/theme-default": "2.0.0-beta.63",
 		"@vuepress/utils": "2.0.0-beta.63",
+		"shx": "^0.4.0",
 		"vue": "^3.3.4",
 		"vuepress": "2.0.0-beta.63",
 		"vuepress-plugin-comment2": "^2.0.0-beta.224"

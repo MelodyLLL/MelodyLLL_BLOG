@@ -33,6 +33,16 @@ const navbar: (NavbarItems | NavbarGroup | string)[] = [
         text: '澳门',
         link: '/trip/macau.md',
       },
+      {
+        text: '珠海',
+        link: '/trip/zhuhai.md',
+      },
+      {
+        text: '印尼旅行手册',
+        link: '/indonesia-trip-guide.html',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
     ]
   },
 

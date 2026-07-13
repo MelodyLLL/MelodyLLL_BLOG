@@ -9,7 +9,16 @@ const sidebar: SidebarConfig = {
   '/trip/':[
     {
       text: '游记',
-      children: ['/trip/macau.md'],
+      children: [
+        '/trip/macau.md',
+        '/trip/zhuhai.md',
+        {
+          text: '印尼旅行手册',
+          link: '/indonesia-trip-guide.html',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        },
+      ],
     },
   ],
 	'/note/react/': [
